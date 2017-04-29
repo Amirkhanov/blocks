@@ -1,0 +1,52 @@
+.cube-slide
+    width 300px
+    height 300px
+    position relative
+    margin 0 auto 500px
+    box-sizing border-box
+    transform-origin center center
+    transform: translateX(0);
+    perspective 1000px
+    opacity 1
+
+    &__inner
+        position absolute
+        top 0
+        left 0
+        width 100%
+        height 100%
+        //transform: translateZ(-150px)
+        transform-style preserve-3d
+        -webkit-animation: 7s cube-transform;
+        animation-iteration-count:infinite;
+        -moz-animation-iteration-count:infinite;
+        -webkit-animation-iteration-count:infinite;
+
+    & .slide
+        position absolute
+        top 0
+        left 0
+        width 100%
+        height 100%
+        display block
+        color #fff
+        font-size 12px
+        background rgba(0,0,0,0.8)
+        backface-visibility: hidden;
+
+    &__item1
+        transform: translateZ(150px);
+    &__item2
+        transform rotateY(90deg) translateZ(150px)
+    &__item3
+        transform rotateX(-90deg) translateZ(150px)
+    &__item4
+        transform rotateY(-90deg) translateZ(150px)
+
+@-webkit-keyframes cube-transform {
+    0%{transform: translateZ(-150px)}
+    25%{transform: translateZ(-150px) rotateY(-90deg)}
+    50%{transform: translateZ(-150px) rotateX(90deg)}
+    75%{transform: translateZ(-150px) rotateY(90deg)}
+    100%{transform: translateZ(-150px)}
+}

@@ -1,0 +1,49 @@
+.steps {
+  position: relative;
+  width: 1em;
+  height: 1em;
+  margin: .2em auto;
+  font: bold 10em/1 Times;
+  }
+.steps:before,
+.steps:after {
+  content: "0123456789";
+  display: inline-block;
+  width: .5em;
+  overflow: hidden;
+  animation: timing 10s infinite step-end;
+  text-shadow: 0 0 4px rgba(0,0,0,.5);
+  }
+.steps:before {
+  animation-duration: 100s;
+  }
+
+@keyframes timing {
+  10%{
+   text-indent: -.5em;
+   }
+  20%{
+   text-indent: -1em;
+   }
+  30%{
+   text-indent: -1.5em;
+   }
+  40%{
+   text-indent: -2em;
+   }
+  50%{
+   text-indent: -2.5em;
+   }
+  60%{
+   text-indent: -3em;
+   }
+  70%{
+   text-indent: -3.5em;
+   }
+  80%{
+   text-indent: -4em;
+   }
+  90%{
+   text-indent: -4.5em;
+   }
+}

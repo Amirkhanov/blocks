@@ -1,0 +1,89 @@
+.tabs
+    margin-top 35px
+
+    &.padding
+        padding-top 53px
+
+    &__links
+
+        display -webkit-flex
+        display -moz-flex
+        display -ms-flex
+        display -o-flex
+        display flex
+        border-top 2px solid #b7b7b7
+        border-bottom 2px solid #b7b7b7
+
+    &__link
+        list-style-type none
+        padding 16px 20px
+        cursor pointer
+        margin-top -2px
+        margin-bottom  -2px
+        transition all ease-out 0.5s
+
+        &.active
+        &:hover
+            background #5880d1
+            color #fff
+
+            & span
+                color #fff
+                border-bottom 1px dashed transparent
+
+        &.active.fixed
+            top 66px
+            left 86px
+            right 81px
+            position fixed
+            z-index 10
+
+            &+.tabs__blocks
+                max-height calc(100vh - 120px)
+                overflow-y auto
+
+        & span
+            text-decoration none
+            font-weight 700
+            color #000
+            font-size 18px
+            white-space nowrap
+            border-bottom 1px dashed #000
+
+    &__blocks
+        font-size 0
+        border-bottom 2px solid #b7b7b7
+        padding 0 0 40px
+        margin-top 30px
+        position relative
+
+    &__block
+        font-size 15px
+        color #000
+        font-weight 300
+        position absolute
+        opacity 0
+        top 0
+        left 0
+        transition all ease-out 0.5s
+        visibility hidden
+        width 100%
+
+        &.active
+            opacity 1
+            position static
+            visibility visible
+
+
+@media all and (max-width: 768px)
+    .tabs__blocks img,.tabs-contacts__blocks img
+            max-width 100%
+
+    .tabs__links
+        flex-direction column
+
+        & div
+          text-align center
+
+    .tabs__link
+        margin-right 0

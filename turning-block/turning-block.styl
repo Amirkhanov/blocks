@@ -1,0 +1,88 @@
+.turning-block
+    position relative
+    cursor pointer
+    perspective: 1000px;
+
+    &.active
+        .turning-block__container
+            transform: rotateY(-180deg);
+
+    &--square
+        width 500px
+        height 500px
+        margin 0 auto
+        font-size 0
+
+    & img
+        max-width 100%
+        height auto
+        -webkit-filter grayscale(0%)
+        filter grayscale(0%)
+        -webkit-animation: 5s filter;
+        animation-iteration-count:infinite;
+        -moz-animation-iteration-count:infinite;
+        -webkit-animation-iteration-count:infinite;
+
+    &__container
+        transition all linear .6s
+        width 100%
+        height 100%
+        -webkit-transform-style: preserve-3d;
+
+    &__front-img, &__back-img
+        position absolute
+        width 100%
+        height 100%
+        backface-visibility hidden
+
+    &__back-img
+        transform: rotateY(-180deg);
+        display block
+
+
+@-webkit-keyframes filter {
+    0%{
+        filter: grayscale(100%);
+        -webkit-filter: grayscale(100%);
+    }
+    10%{
+        filter: grayscale(80%);
+        -webkit-filter: grayscale(80%);
+    }
+    20%{
+        filter: grayscale(60%);
+        -webkit-filter: grayscale(60%);
+    }
+    30%{
+        filter: grayscale(40%);
+        -webkit-filter: grayscale(40%);
+    }
+    40%{
+        filter: grayscale(20%);
+        -webkit-filter: grayscale(20%);
+    }
+    50%{
+        filter: grayscale(0%);
+        -webkit-filter: grayscale(0%);
+    }
+    60%{
+        filter: grayscale(20%);
+        -webkit-filter: grayscale(20%);
+    }
+    70%{
+        filter: grayscale(40%);
+        -webkit-filter: grayscale(40%);
+    }
+    80%{
+        filter: grayscale(60%);
+        -webkit-filter: grayscale(60%);
+    }
+    90%{
+        filter: grayscale(80%);
+        -webkit-filter: grayscale(80%);
+    }
+    100%{
+        filter: grayscale(100%);
+        -webkit-filter: grayscale(100%);
+    }
+}

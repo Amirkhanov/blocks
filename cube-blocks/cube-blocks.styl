@@ -1,0 +1,62 @@
+.cube-blocks
+    display -webkit-flex
+    display -moz-flex
+    display -ms-flex
+    display -o-flex
+    display flex
+    justify-content center
+    position relative
+    background #ff8800
+
+    & canvas
+        position absolute
+        top 0
+        left 0
+        width 100%
+
+    &__item-wrap
+        width 250px
+        height 250px
+        position relative
+        box-sizing border-box
+        transform-origin center center
+        transform translateX(0)
+        perspective 1000px
+        opacity 1
+        list-style-type none
+
+    & .item
+        position absolute
+        top 0
+        left 0
+        width 100%
+        height 100%
+        transform translateZ(-125px)
+        transform-style preserve-3d
+        transition all 0.5s
+
+        &__inner
+            position absolute
+            top 0
+            left 0
+            width 100%
+            height 100%
+            display block
+            color #fff
+            font-size 12px
+            background rgba(0,0,0,0.8)
+            backface-visibility: hidden;
+
+            &--center
+                transform: translateZ(125px);
+            &--right
+                transform rotateY(90deg) translateZ(125px)
+            &--bottom
+                transform rotateX(-90deg) translateZ(125px)
+            &--left
+                transform rotateY(-90deg) translateZ(125px)
+            &--top
+                transform rotateX(90deg) translateZ(125px);
+            &--back
+                transform rotateX(-180deg) translateZ(125px);
+
